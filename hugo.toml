@@ -3,9 +3,9 @@
 # ============================================================
 
 # 基础设置
-baseURL = 'https://stevenchen.dev/'
+baseURL = 'https://stevenchen-real.github.io/'
 languageCode = 'zh-cn'
-title = "Steven's Blog"
+title = "Ditto's Blog"
 theme = 'PaperMod'
 
 # 分页
@@ -28,8 +28,8 @@ theme = 'PaperMod'
 # 网站参数
 # ============================================================
 [params]
-  description = "写代码，也写生活。"
-  author = 'Steven'
+  description = "誓不收敛。"
+  author = 'Ditto'
   dateFormat = '2006-01-02'
 
   # 主题模式（auto / light / dark）
@@ -62,9 +62,9 @@ theme = 'PaperMod'
   # 3. https://giscus.app 填写仓库名，获取 repoID 和 categoryID
   [params.giscus]
     repo = 'Stevenchen-real/stevenchen-real.github.io'
-    repoID = ''
+    repoID = 'R_kgDOTKqLaw'
     category = 'Announcements'
-    categoryID = ''
+    categoryID = 'DIC_kwDOTKqLa84DASyg'
     mapping = 'pathname'
     reactionsEnabled = '1'
     emitMetadata = '0'
