@@ -8,29 +8,25 @@ ShowToc: false
 
 ## 关于我
 
-Hi，我是 Steven 👋
+Hi, 我是 Ditto 🤗
 
-一个喜欢写代码的程序员，目前专注于后端开发和系统设计。
+致力于探索 AI 的不同可能，希望有一天能创造出超越人类的智能 🤖
 
-### 技术栈
+### 感兴趣的研究方向
 
-- **语言**：Go、Python、TypeScript
-- **方向**：云原生、分布式系统、DevOps
-- **工具**：Neovim、Tmux、Arch Linux
+- Diffusion/Flow Matching
+- Vector Quantization
+- Reinforcement Learning
 
 ### 关于这个博客
 
-这里主要记录：
-
-- 技术笔记和踩坑记录
-- 项目复盘和架构思考
-- 偶尔的读书笔记和生活杂谈
+这里主要记录我随时冒出来的奇思妙想！🤗
 
 ### 联系方式
 
 - **GitHub**：[Stevenchen-real](https://github.com/Stevenchen-real)
-- **Email**：`steven [at] stevenchen.dev`
+- **Email**：`1049273544@qq.com`
 
 ---
 
-> Stay hungry, stay foolish.
+> 誓不收敛的我发散着思维，永不停歇地向那无穷逼近。

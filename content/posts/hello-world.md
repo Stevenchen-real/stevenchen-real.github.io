@@ -6,7 +6,7 @@ description: "第一篇博客，记录搭建这个网站的点点滴滴。"
 summary: "第一篇博客，记录搭建的过程。"
 tags: ["博客", "Hugo"]
 categories: ["杂谈"]
-draft: false
+draft: True
 ShowToc: true
 TocOpen: false
 ---
