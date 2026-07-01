@@ -1,0 +1,103 @@
+# ============================================================
+# Hugo + PaperMod 配置
+# ============================================================
+
+# 基础设置
+baseURL = 'https://stevenchen.dev/'
+languageCode = 'zh-cn'
+title = "Steven's Blog"
+theme = 'PaperMod'
+
+# 分页
+[pagination]
+  pagerSize = 10
+
+# 代码高亮
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    noClasses = false
+    guessSyntax = true
+    lineNos = true
+
+# 生成 RSS
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+# ============================================================
+# 网站参数
+# ============================================================
+[params]
+  description = "写代码，也写生活。"
+  author = 'Steven'
+  dateFormat = '2006-01-02'
+
+  # 主题模式（auto / light / dark）
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+
+  # 显示选项
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+  # 搜索（PaperMod 内置 Fuse.js）
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ['title', 'permalink', 'summary', 'content']
+
+  # Giscus 评论系统
+  # 配置步骤：
+  # 1. https://github.com/apps/giscus 安装 Giscus 到你的仓库
+  # 2. 仓库 Settings → Features → 勾选 Discussions
+  # 3. https://giscus.app 填写仓库名，获取 repoID 和 categoryID
+  [params.giscus]
+    repo = 'Stevenchen-real/stevenchen-real.github.io'
+    repoID = ''
+    category = 'Announcements'
+    categoryID = ''
+    mapping = 'pathname'
+    reactionsEnabled = '1'
+    emitMetadata = '0'
+    inputPosition = 'bottom'
+    lang = 'zh-CN'
+    lightTheme = 'light'
+    darkTheme = 'dark_dimmed'
+    loading = 'lazy'
+
+# 社交链接
+[[params.socialIcons]]
+  name = 'github'
+  url  = 'https://github.com/Stevenchen-real'
+[[params.socialIcons]]
+  name = 'rss'
+  url  = '/index.xml'
+
+# 导航菜单
+[[menu.main]]
+  name = '文章'
+  pageRef = '/posts'
+  weight = 10
+[[menu.main]]
+  name = '标签'
+  pageRef = '/tags'
+  weight = 20
+[[menu.main]]
+  name = '关于'
+  pageRef = '/about'
+  weight = 30
+
+# Taxonomies
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  series = 'series'
