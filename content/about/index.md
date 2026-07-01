@@ -25,7 +25,7 @@ Hi, 我是 Ditto 🤗
 ### 联系方式
 
 - **GitHub**：[Stevenchen-real](https://github.com/Stevenchen-real)
-- **Email**：`1049273544@qq.com`
+- **Email**：`cljx25@mails.tsinghua.edu.cn`
 
 ---
 
