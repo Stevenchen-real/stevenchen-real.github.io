@@ -1,7 +1,7 @@
 ---
 title: "梦的序章"
-date: "2026-07-02"
-lastmod: "2026-07-02"
+date: "2026-07-01"
+lastmod: "2026-07-01"
 description: "启程，远航。"
 summary: "启程，远航。"
 tags: ["dream"]
