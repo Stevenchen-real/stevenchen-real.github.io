@@ -1,5 +1,5 @@
 ---
-title: "梦的起点"
+title: "梦的序章"
 date: "2026-07-02"
 lastmod: "2026-07-02"
 description: "启程，远航。"
