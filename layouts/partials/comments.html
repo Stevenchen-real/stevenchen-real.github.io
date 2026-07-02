@@ -1,20 +1,65 @@
 {{- if isset .Site.Params "giscus" }}
 {{- if and (isset .Site.Params.giscus "repo") (not (eq .Site.Params.giscus.repo "" )) }}
-<script src="https://giscus.app/client.js"
-    data-repo="{{ .Site.Params.giscus.repo }}"
-    data-repo-id="{{ .Site.Params.giscus.repoID }}"
-    data-category="{{ .Site.Params.giscus.category }}"
-    data-category-id="{{ .Site.Params.giscus.categoryID }}"
-    data-mapping="{{ default "pathname" .Site.Params.giscus.mapping }}"
-    data-strict="{{ default "0" .Site.Params.giscus.strict }}"
-    data-reactions-enabled="{{ default "1" .Site.Params.giscus.reactionsEnabled }}"
-    data-emit-metadata="{{ default "0" .Site.Params.giscus.emitMetadata }}"
-    data-input-position="{{ default "bottom" .Site.Params.giscus.inputPosition }}"
-    data-theme="{{ default "preferred_color_scheme" .Site.Params.giscus.theme }}"
-    data-lang="{{ default "zh-CN" .Site.Params.giscus.lang }}"
-    data-loading="{{ default "lazy" .Site.Params.giscus.loading }}"
-    crossorigin="anonymous"
-    async>
+{{- $lightTheme := default "light" .Site.Params.giscus.lightTheme }}
+{{- $darkTheme  := default "dark_dimmed" .Site.Params.giscus.darkTheme }}
+<div class="giscus"></div>
+<script>
+(function () {
+  const lightTheme = "{{ $lightTheme }}";
+  const darkTheme  = "{{ $darkTheme }}";
+
+  function getEffectiveTheme() {
+    const stored = localStorage.getItem("pref-theme");
+    if (stored === "light" || stored === "dark") return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function giscusTheme() {
+    return getEffectiveTheme() === "dark" ? darkTheme : lightTheme;
+  }
+
+  // 初始化 Giscus
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.setAttribute("data-repo",        "{{ .Site.Params.giscus.repo }}");
+  script.setAttribute("data-repo-id",        "{{ .Site.Params.giscus.repoID }}");
+  script.setAttribute("data-category",       "{{ .Site.Params.giscus.category }}");
+  script.setAttribute("data-category-id",    "{{ .Site.Params.giscus.categoryID }}");
+  script.setAttribute("data-mapping",        "{{ default "pathname" .Site.Params.giscus.mapping }}");
+  script.setAttribute("data-reactions-enabled", "{{ default "1" .Site.Params.giscus.reactionsEnabled }}");
+  script.setAttribute("data-emit-metadata",  "{{ default "0" .Site.Params.giscus.emitMetadata }}");
+  script.setAttribute("data-input-position", "{{ default "bottom" .Site.Params.giscus.inputPosition }}");
+  script.setAttribute("data-theme",          giscusTheme());
+  script.setAttribute("data-lang",           "{{ default "zh-CN" .Site.Params.giscus.lang }}");
+  script.setAttribute("data-loading",        "{{ default "lazy" .Site.Params.giscus.loading }}");
+  script.setAttribute("crossorigin",         "anonymous");
+  script.async = true;
+
+  const container = document.querySelector(".giscus");
+  container.appendChild(script);
+
+  // 监听主题切换，同步更新 Giscus
+  function updateGiscusTheme() {
+    const iframe = document.querySelector(".giscus iframe, iframe.giscus-frame");
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: giscusTheme() } } },
+        "https://giscus.app"
+      );
+    }
+  }
+
+  // PaperMod 切换主题时触发
+  const observer = new MutationObserver(() => updateGiscusTheme());
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  // 系统主题变化时也更新
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (localStorage.getItem("pref-theme") === "auto" || !localStorage.getItem("pref-theme")) {
+      updateGiscusTheme();
+    }
+  });
+})();
 </script>
 {{- end }}
 {{- end }}
