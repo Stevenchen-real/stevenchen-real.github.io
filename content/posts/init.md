@@ -30,13 +30,3 @@ TocOpen: false
 我的梦想已经被他人实现，我也并不后悔。
 
 > 在人生的盛夏，做一场不留遗憾的梦。
-
-## 测试数学公式
-
-行内公式：$e^{i\pi} + 1 = 0$
-
-块级公式：
-
-$$
-\hat{\theta} = \arg\min_{\theta} \frac{1}{n} \sum_{i=1}^{n} \mathcal{L}\left(f(x_i; \theta), y_i\right)
-$$
