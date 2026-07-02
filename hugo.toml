@@ -45,6 +45,12 @@ theme = 'PaperMod'
   ShowToc = true
   TocOpen = false
 
+  # 评论系统
+  comments = true
+
+  # 数学公式（KaTeX）
+  math = true
+
   # 搜索（PaperMod 内置 Fuse.js）
   [params.fuseOpts]
     isCaseSensitive = false
@@ -54,9 +60,6 @@ theme = 'PaperMod'
     threshold = 0.4
     minMatchCharLength = 0
     keys = ['title', 'permalink', 'summary', 'content']
-
-  # 评论系统
-  comments = true
 
   # Giscus 评论系统
   # 配置步骤：
