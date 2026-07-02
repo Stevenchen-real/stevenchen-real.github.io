@@ -7,6 +7,7 @@ summary: "启程，远航。"
 tags: ["dream"]
 categories: ["杂谈"]
 draft: false
+comments: true
 ShowToc: true
 TocOpen: false
 ---

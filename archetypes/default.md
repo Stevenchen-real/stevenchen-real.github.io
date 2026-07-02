@@ -8,6 +8,7 @@ tags: []
 categories: []
 series: []
 draft: true
+comments: true
 ShowToc: true
 TocOpen: false
 ShowReadingTime: true

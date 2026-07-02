@@ -55,6 +55,9 @@ theme = 'PaperMod'
     minMatchCharLength = 0
     keys = ['title', 'permalink', 'summary', 'content']
 
+  # 评论系统
+  comments = true
+
   # Giscus 评论系统
   # 配置步骤：
   # 1. https://github.com/apps/giscus 安装 Giscus 到你的仓库
